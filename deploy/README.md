@@ -1,11 +1,11 @@
-#ctpn:    
+# ctpn:    
     
 sudo docker run -p 9002:8501 -p 9001:8500 --mount type=bind,source=/xxx/ctpn_densenet/deploy/ctpn_savemodel/,target=/models/ctpn -e MODEL_NAME=ctpn -t tensorflow/serving:1.11.0
     
-#densenet:    
+# densenet:    
 sudo docker run -p 9002:8501 -p 9001:8500 --mount type=bind,source=/xxx/ctpn_densenet/deploy/densenet_savemodel/,target=/models/densenet -e MODEL_NAME=densenet -t tensorflow/serving:1.11.0
     
-#ctpn+densenet:    
+# ctpn+densenet:    
 sudo docker run -p 9002:8501 -p 9001:8500 --mount type=bind,source=/xxx/ctpn_densenet/deploy/ctpn_densenet/,target=/models/ocr -e MODEL_NAME=ocr -t tensorflow/serving:1.11.0
     
 #######################################    
