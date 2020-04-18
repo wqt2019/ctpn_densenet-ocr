@@ -26,7 +26,7 @@ cd deploy
 3.python [gen_serving_model_densenet.py](./deploy/gen_serving_model_densenet.py)  . convert keras-model to savemodel  
 4.python /xxx/tensorflow/python/tools/saved_model_cli.py show --dir /xxx/ctpn_densenet/deploy/ctpn_savemodel/1/ --all  
   python /xxx/tensorflow/python/tools/saved_model_cli.py show --dir /xxx/ctpn_densenet/deploy/densenet_savemodel/1/ --all  
- check the input and output of each savemodel, and then edit merge_ctpn_densenet_savemodel.py   
+ --check the input and output of each savemodel, and then edit merge_ctpn_densenet_savemodel.py   
 5.python [merge_ctpn_densenet_savemodel.py](./deploy/merge_ctpn_densenet_savemodel.py)  . merge the ctpn_savemodel and densenet_savemodel into one model  
 6.Server : sudo docker run -p 9002:8501 -p 9001:8500 --mount type=bind,source=/xxx/ctpn_densenet/deploy/ctpn_densenet/,target=/models/ocr -e MODEL_NAME=ocr -t tensorflow/serving:1.11.0  
 7.python [ocr_client.py](./deploy/ocr_client.py)   
