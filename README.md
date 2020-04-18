@@ -4,22 +4,22 @@ re-implement the pre-process and post-process of CTPN/densenet by pure tensorflo
   
 the Server only include one command:  
   
-#ctpn:  
+# ctpn:  
 sudo docker run -p 9002:8501 -p 9001:8500 --mount type=bind,source=/xxx/ctpn_densenet/deploy/ctpn_savemodel/,target=/models/ctpn -e MODEL_NAME=ctpn -t tensorflow/serving:1.11.0  
   
-#densenet:  
+# densenet:  
 sudo docker run -p 9002:8501 -p 9001:8500 --mount type=bind,source=/xxx/ctpn_densenet/deploy/densenet_savemodel/,target=/models/densenet -e MODEL_NAME=densenet -t tensorflow/serving:1.11.0  
   
-#ctpn+densenet:  
+# ctpn+densenet:  
 sudo docker run -p 9002:8501 -p 9001:8500 --mount type=bind,source=/xxx/ctpn_densenet/deploy/ctpn_densenet/,target=/models/ocr -e MODEL_NAME=ocr -t tensorflow/serving:1.11.0  
   
   
-#train  
+# train  
 1.https://github.com/eragonruan/text-detection-ctpn  
 2.https://github.com/YCG09/chinese_ocr  
   
   
-#deploy  
+# deploy  
 cd deploy  
 1.python [generate_ctpn_pb.py](./deploy/generate_ctpn_pb.py) . convert ckpt to pb  
 2.python [gen_serving_model_ctpn.py](./deploy/gen_serving_model_ctpn.py)  . convert pb to savemodel  
@@ -35,7 +35,7 @@ also, you can debug the post-process(tensorflow-api implementation) of CTPN with
   
   
   
-#reference:  
+# reference:  
 https://github.com/eragonruan/text-detection-ctpn  
 https://github.com/YCG09/chinese_ocr  
   
